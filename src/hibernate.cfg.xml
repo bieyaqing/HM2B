@@ -10,6 +10,7 @@
   <property name="hibernate.show_sql">false</property>
   <property name="hibernate.format_sql">true</property>
   <property name="hibernate.hbm2ddl.auto">update</property>
+  <property name="hibernate.connection.autocommit">true</property>
   <mapping resource="model/user/User.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>
