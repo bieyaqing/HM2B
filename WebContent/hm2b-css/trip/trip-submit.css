@@ -1,0 +1,12 @@
+.trip-text{
+	font-size: 20px;
+}
+
+#tripContent{
+	position: relative;
+	height: 280px;
+}
+
+.trip-form{
+	height: 170px;
+}

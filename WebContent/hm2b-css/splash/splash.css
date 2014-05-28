@@ -6,10 +6,9 @@
 }
 
 #splashBanner{
-	background: url('../hm2b-img/splash-banner.png') center center;
+	background: url('/HM2B/hm2b-img/splash/splash-banner.png') center center;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	margin-top: 50px;
 }
 
 .banner-content{

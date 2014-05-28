@@ -56,3 +56,57 @@
 	background-color: transparent;
 	margin-bottom: 15px;
 }
+
+#hm2bContent{
+	margin-top: 50px;
+}
+
+.my-pb-circle{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	color: #FFFFFF;
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #AAAAAA;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	cursor: default;
+}
+
+.my-pb-line{
+	display: inline-block;
+	height: 14px;
+	width: 30%;
+	margin-bottom: 2px;
+	background-color: #AAAAAA;
+}
+
+.my-pb-link{
+	display: inline-block;
+	width: 30%;
+}
+
+.my-pb-link-margin{
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+}
+
+.my-pb-text-margin{
+	margin-left: -44px;
+}
+
+.my-well{
+	padding: 14px;
+	font-size: 16px;
+	margin-bottom: 0px;
+}
+
+.my-link-disable{
+	pointer-events: none;
+	cursor: default;
+	color: #AAAAAA;
+}
