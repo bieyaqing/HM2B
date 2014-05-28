@@ -1,0 +1,58 @@
+.color-gray{
+	color: #777777;
+}
+
+.color-white{
+	color: #F2F2F2;
+}
+
+.bg-color-black{
+	background-color: #2A2A2A;
+}
+
+.bg-color-gray{
+	background-color: #F2F2F2;
+}
+
+.bg-color-green{
+	background-color: #E6FFE6;
+}
+
+.bg-color-pink{
+	background-color: #FFEBFF;
+}
+
+.text-u{
+	text-decoration: underline;
+}
+
+.hm2b-logo{
+	height: 50px;
+}
+
+.nav-top-margin{
+	margin-top: 16px;
+}
+
+.hm2b-text-center{
+	text-align: center;
+}
+
+.hm2b-text-margin{
+	margin-top: 30px;
+	margin-left: 70px;
+	margin-right: 70px;
+}
+
+.hm2b-btn-xl{
+	font-size: 60px;
+	margin-bottom: 20px;
+	border: 0px;
+	background-color: transparent;
+}
+
+.hm2b-btn-xl:hover{
+	font-size: 65px;
+	background-color: transparent;
+	margin-bottom: 15px;
+}

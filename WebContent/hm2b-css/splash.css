@@ -1,0 +1,19 @@
+.hm2b-banner{
+	height: 400px;
+	margin: 0 auto 0;
+	overflow: hidden;
+	position: relative;
+}
+
+#splashBanner{
+	background: url('../hm2b-img/splash-banner.png') center center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	margin-top: 50px;
+}
+
+.banner-content{
+	color: #FFFFFF;
+	font-weight: 300;
+	line-height: 200%;
+}
