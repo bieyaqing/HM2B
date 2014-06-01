@@ -12,5 +12,11 @@
   <property name="hibernate.hbm2ddl.auto">update</property>
   <property name="hibernate.connection.autocommit">true</property>
   <mapping resource="model/user/User.hbm.xml"/>
+  <mapping resource="model/travel/Travel.hbm.xml"/>
+  <mapping resource="model/offer/Offer.hbm.xml"/>
+  <mapping resource="model/item/Item.hbm.xml"/>
+  <mapping resource="model/deal/Deal.hbm.xml"/>
+  <mapping resource="model/credit/Credit.hbm.xml"/>
+  <mapping resource="model/chat/Chat.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

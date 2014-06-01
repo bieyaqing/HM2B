@@ -1,33 +1,79 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated May 9, 2014 12:13:04 PM by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated Jun 1, 2014 10:38:49 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
  <class name="model.user.User" table="USER">
   <id name="userId" type="long">
    <column name="USERID"/>
    <generator class="increment"/>
   </id>
-  <property generated="never" lazy="false" name="name" type="java.lang.String">
-   <column name="NAME"/>
+  <one-to-one class="model.credit.Credit" name="credit"/>
+  <property generated="never" lazy="false" name="passwordHash" type="java.lang.String">
+   <column name="PASSWORDHASH"/>
+  </property>
+  <property generated="never" lazy="false" name="passwordSalt" type="java.lang.String">
+   <column name="PASSWORDSALT"/>
+  </property>
+  <property generated="never" lazy="false" name="firstName" type="java.lang.String">
+   <column name="FIRSTNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="lastName" type="java.lang.String">
+   <column name="LASTNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="gender" type="char">
+   <column name="GENDER"/>
+  </property>
+  <property generated="never" lazy="false" name="birthDate" type="java.util.Date">
+   <column name="BIRTHDATE"/>
+  </property>
+  <property generated="never" lazy="false" name="contact" type="java.lang.String">
+   <column name="CONTACT"/>
+  </property>
+  <property generated="never" lazy="false" name="countryCode" type="java.lang.String">
+   <column name="COUNTRYCODE"/>
+  </property>
+  <property generated="never" lazy="false" name="contactConfirmed" type="boolean">
+   <column name="CONTACTCONFIRMED"/>
   </property>
   <property generated="never" lazy="false" name="email" type="java.lang.String">
    <column name="EMAIL"/>
   </property>
-  <property generated="never" lazy="false" name="password" type="java.lang.String">
-   <column name="PASSWORD"/>
+  <property generated="never" lazy="false" name="emailConfirmed" type="boolean">
+   <column name="EMAILCONFIRMED"/>
+  </property>
+  <property generated="never" lazy="false" name="address" type="java.lang.String">
+   <column length="665" name="ADDRESS"/>
   </property>
   <property generated="never" lazy="false" name="facebookId" type="java.lang.String">
    <column name="FACEBOOKID"/>
   </property>
-  <property generated="never" lazy="false" name="photoUrl" type="java.lang.String">
-   <column length="665" name="PHOTOURL"/>
-  </property>
-  <property generated="never" lazy="false" name="photoSize" type="java.lang.String">
-   <column name="PHOTOSIZE"/>
-  </property>
-  <property generated="never" lazy="false" name="remark" type="java.lang.String">
-   <column length="665" name="REMARK"/>
+  <set lazy="false" name="travels" sort="unsorted" table="TRAVEL">
+   <key>
+    <column name="USERID"/>
+   </key>
+   <one-to-many class="model.travel.Travel"/>
+  </set>
+  <set access="field" lazy="false" name="travellerDeals" sort="unsorted" table="DEAL">
+   <key>
+    <column name="USERID"/>
+   </key>
+   <one-to-many class="model.deal.Deal"/>
+  </set>
+  <set lazy="false" name="buyerDeals" sort="unsorted" table="DEAL">
+   <key>
+    <column name="USERID"/>
+   </key>
+   <one-to-many class="model.deal.Deal"/>
+  </set>
+  <set lazy="false" name="chats" sort="unsorted" table="CHAT">
+   <key>
+    <column name="USERID"/>
+   </key>
+   <one-to-many class="model.chat.Chat"/>
+  </set>
+  <property generated="never" lazy="false" name="remarks" type="java.lang.String">
+   <column name="REMARKS"/>
   </property>
   <property generated="never" lazy="false" name="createDate" type="java.util.Date">
    <column name="CREATEDATE"/>

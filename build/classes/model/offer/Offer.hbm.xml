@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 1, 2014 10:38:49 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="model.offer.Offer" table="OFFER">
+  <id name="offerId" type="long">
+   <column name="OFFERID"/>
+   <generator class="increment"/>
+  </id>
+  <many-to-one access="field" class="model.deal.Deal" fetch="join" name="deal">
+   <column name="DEAL"/>
+  </many-to-one>
+  <one-to-one class="model.item.Item" name="item"/>
+  <property generated="never" lazy="false" name="status" type="int">
+   <column name="STATUS"/>
+  </property>
+  <property generated="never" lazy="false" name="price" type="float">
+   <column name="PRICE"/>
+  </property>
+  <many-to-one access="field" class="model.user.User" fetch="join" name="offeredBy">
+   <column name="OFFEREDBY"/>
+  </many-to-one>
+  <property generated="never" lazy="false" name="remarks" type="java.lang.String">
+   <column name="REMARKS"/>
+  </property>
+  <property generated="never" lazy="false" name="createDate" type="java.util.Date">
+   <column name="CREATEDATE"/>
+  </property>
+ </class>
+</hibernate-mapping>

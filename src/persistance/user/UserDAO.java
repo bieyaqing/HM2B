@@ -4,6 +4,7 @@ import hibernate.HibernateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import model.user.User;
 
@@ -40,23 +41,49 @@ public class UserDAO {
 	}
 	
 	//featured method
-	public static User getUserByName(String name){
+	//userbyuemail
+	public static User getUserByEmail(String email){
 		User user = null;
 		User tempUser = null;
 		
 		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(User.class);
-		if(name != null){
-			detachedCriteria.add(Restrictions.eq(Config.NAME, name));
+		if(email != null){
+			detachedCriteria.add(Restrictions.eq(Config.EMAIL, email));
 		}
 		List<Object> list = HibernateUtil.detachedCriteriaReturnList(detachedCriteria);
 		
 		for(Object o : list){
-			tempUser = (User)o;
-			if(tempUser.getName().equals(name)){
+			user = (User)o;
+			if(user.getEmail().equals(email)){
 				user = tempUser;
 				break;
 			}
 		}
 		return user;
 	}
+	
+	public static User getUserByName(String lastName, String firstName){
+		User user = null;
+		User tempUser = null;
+		
+		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(User.class);
+		if(lastName != null){
+			detachedCriteria.add(Restrictions.eq(Config.LASTNAME, lastName));
+		}
+		if(firstName != null){
+			detachedCriteria.add(Restrictions.eq(Config.FIRSTNAME, firstName));
+		}
+		
+		List<Object> list = HibernateUtil.detachedCriteriaReturnList(detachedCriteria);
+		
+		for(Object o : list){
+			user = (User)o;
+			if(user.getLastName().equals(lastName) || user.getFirstName().equals(firstName)){
+				user = tempUser;
+				break;
+			}
+		}
+		return user;
+	}
+	
 }

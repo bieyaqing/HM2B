@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 1, 2014 10:38:49 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="model.deal.Deal" table="DEAL">
+  <id name="dealId" type="long">
+   <column name="DEALID"/>
+   <generator class="increment"/>
+  </id>
+  <many-to-one class="model.item.Item" fetch="join" name="item">
+   <column name="ITEM"/>
+  </many-to-one>
+  <many-to-one class="model.travel.Travel" fetch="join" name="travel">
+   <column name="TRAVEL"/>
+  </many-to-one>
+  <many-to-one class="model.user.User" fetch="join" name="traveller">
+   <column name="TRAVELLER"/>
+  </many-to-one>
+  <many-to-one class="model.user.User" fetch="join" name="buyer">
+   <column name="BUYER"/>
+  </many-to-one>
+  <set lazy="false" name="offers" sort="unsorted" table="OFFER">
+   <key>
+    <column name="DEALID"/>
+   </key>
+   <one-to-many class="model.offer.Offer"/>
+  </set>
+  <property generated="never" lazy="false" name="price" type="float">
+   <column name="PRICE"/>
+  </property>
+  <many-to-one class="model.user.User" fetch="join" name="offeredBy">
+   <column name="OFFEREDBY"/>
+  </many-to-one>
+  <set lazy="false" name="chats" sort="unsorted" table="CHAT">
+   <key>
+    <column name="DEALID"/>
+   </key>
+   <one-to-many class="model.chat.Chat"/>
+  </set>
+  <property generated="never" lazy="false" name="status" type="int">
+   <column name="STATUS"/>
+  </property>
+  <property generated="never" lazy="false" name="remarks" type="java.lang.String">
+   <column name="REMARKS"/>
+  </property>
+  <property generated="never" lazy="false" name="createDate" type="java.util.Date">
+   <column name="CREATEDATE"/>
+  </property>
+ </class>
+</hibernate-mapping>

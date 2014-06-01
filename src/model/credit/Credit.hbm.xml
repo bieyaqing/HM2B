@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 1, 2014 10:38:49 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="model.credit.Credit" table="CREDIT">
+  <id name="creditId" type="long">
+   <column name="CREDITID"/>
+   <generator class="increment"/>
+  </id>
+  <one-to-one class="model.user.User" name="user"/>
+  <property generated="never" lazy="false" name="paypalKey" type="java.lang.String">
+   <column name="PAYPALKEY"/>
+  </property>
+  <property generated="never" lazy="false" name="creditName" type="java.lang.String">
+   <column name="CREDITNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="creditExpiry" type="java.util.Date">
+   <column name="CREDITEXPIRY"/>
+  </property>
+  <property generated="never" lazy="false" name="creditNumber" type="long">
+   <column name="CREDITNUMBER"/>
+  </property>
+  <property generated="never" lazy="false" name="remarks" type="java.lang.String">
+   <column name="REMARKS"/>
+  </property>
+  <property generated="never" lazy="false" name="createDate" type="java.util.Date">
+   <column name="CREATEDATE"/>
+  </property>
+ </class>
+</hibernate-mapping>
